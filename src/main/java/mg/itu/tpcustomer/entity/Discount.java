@@ -16,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 
 /**
@@ -25,9 +26,9 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "DISCOUNT")
 @NamedQueries({
-    @NamedQuery(name = "Discount.findAll", query = "SELECT d FROM Discount d"),
+    @NamedQuery(name = "Discount.findAll", query = "SELECT d FROM Discount d ORDER BY d.code DESC"),
     @NamedQuery(name = "Discount.findByCode", query = "SELECT d FROM Discount d WHERE d.code = :code"),
-    @NamedQuery(name = "Discount.findByRate", query = "SELECT d FROM Discount d WHERE d.rate = :rate")})
+    @NamedQuery(name = "Discount.findByRate", query = "SELECT d FROM Discount d WHERE d.rate = :rate"),})
 public class Discount implements Serializable {
 
     private static final long serialVersionUID = 1L;
