@@ -34,7 +34,14 @@
                 <f:facet name="header">
                     <h:outputText value="Discounts"/>
                 </f:facet>
-                <h:outputText value="#{item.discount}"/>
+                <h:outputText value="#{item.discount.code} : #{item.discount.rate} %" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Zip Code"/>
+                </f:facet>
+                <h:outputText value="#{item.zip.zipCode} " />
             </h:column>
         </h:dataTable>
     </h:body>
